@@ -1,0 +1,58 @@
+Create a new local repo
+$ mkdir NAME
+$ cd /NAME
+$ git init
+$ ls -la .git
+
+Create and Add a file to the local repo
+$ touch newfile
+$ git add newfile
+
+Commit changes
+tell git who we are
+$ git config --global user.email "liskanderloozgeen@gmail.com"
+$ git config --global user.name "LX-SEER"
+
+$ git commit -m "added newfile"
+
+Create a branch
+$ git branch NAME
+
+Get a list of branches and active branch
+$ git checkout NAME
+$ git branch
+-b option that creates the branch and makes it active in one step
+$ git checkout -b NAME
+
+Make changes in your branch and check the status of files added/changed
+$ echo 'Here is some text in my newfile.' >> newfile
+Verify the text has been added by pasting the following cat command:
+$ cat newfile
+$ touch readme.md
+$ git add readme.md
+verify the changes
+$ git status
+adding all mgit odifications and additions is to use the following git add command with an asterix *
+$ git add *
+$ git status
+
+Commit and review commit history
+$ git commit -m "added readme.md modified newfile"
+to get a history of recent commits
+$ git log
+
+Revert committed changes
+$ git revert HEAD --no-edit
+
+merge changes into another branch
+$ touch goodfile
+$ git add goodfile
+$ git commit -m "added goodfile"
+$ git log
+make the master branch active
+$ git checkout master
+merge the changes 
+$ git merge my1stbranch
+$ git log
+the my1stbranch can be deleted using the following git branch command with the -d option
+$ git branch -d my1stbranch
